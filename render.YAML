@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: 3d-companion
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ACCESS_PASSWORD
+        sync: false
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-5-5
